@@ -48,13 +48,14 @@ public class WebController {
 	 * in your web browser, type the link:
 	 * 	http://localhost:8080/cs480/ping
 	 */
-	@RequestMapping(value = "/cs580/ping", method = RequestMethod.GET)
+	@RequestMapping(value = "/masesk", method = RequestMethod.GET)
 	String healthCheck() {
 		// You can replace this with other string,
 		// and run the application locally to check your changes
 		// with the URL: http://localhost:8080/
-		return "OK-CS480-Demo";
+		return "Mases Krikorian was here";
 	}
+
 
 	/**
 	 * This is a simple example of how to use a data manager
@@ -70,6 +71,14 @@ public class WebController {
 	User getUser(@PathVariable("userId") String userId) {
 		User user = userManager.getUser(userId);
 		return user;
+	}
+	
+	@RequestMapping(value = "/masesk/test", method = RequestMethod.GET)
+	String masesk() {
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/
+		return "Mases Krikorian was here";
 	}
 
 	/**
