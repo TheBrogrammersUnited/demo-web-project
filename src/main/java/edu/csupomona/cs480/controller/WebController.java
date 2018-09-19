@@ -42,11 +42,7 @@ public class WebController {
 	private GpsProductManager gpsProductManager;
 
 	/**
-	 * This is a simple example of how the HTTP API works.
-	 * It returns a String "OK" in the HTTP response.
-	 * To try it, run the web application locally,
-	 * in your web browser, type the link:
-	 * 	http://localhost:8080/cs480/ping
+	 * mases example
 	 */
 	@RequestMapping(value = "/masesk", method = RequestMethod.GET)
 	String healthCheck() {
@@ -54,6 +50,17 @@ public class WebController {
 		// and run the application locally to check your changes
 		// with the URL: http://localhost:8080/
 		return "Mases Krikorian was here";
+	}
+	
+	/**
+	 * sean example
+	 */
+	@RequestMapping(value = "/sean", method = RequestMethod.GET)
+	String seanHereString() {
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/
+		return "Sean Castillo was here";
 	}
 
 
