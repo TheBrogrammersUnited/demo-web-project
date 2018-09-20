@@ -62,7 +62,16 @@ public class WebController {
 		// with the URL: http://localhost:8080/
 		return "Sean Castillo was here";
 	}
-
+	/**
+	 * Varoozhan example
+	 */
+	@RequestMapping(value = "/varoozhan", method = RequestMethod.GET)
+	String seanHereString() {
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/
+		return "Varoozhan Hartoonian was here";
+	}
 
 	/**
 	 * This is a simple example of how to use a data manager
