@@ -62,6 +62,19 @@ public class WebController {
 		// with the URL: http://localhost:8080/
 		return "Sean Castillo was here";
 	}
+        
+        /**
+	 * john zubiri example
+	 */
+	@RequestMapping(value = "/johnz", method = RequestMethod.GET)
+	String johnPeasant() {
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/
+		return "Zug-zug.";
+	}
+        
+        
 	/**
 	 * Varoozhan example
 	 */
