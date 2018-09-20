@@ -66,7 +66,7 @@ public class WebController {
 	 * Varoozhan example
 	 */
 	@RequestMapping(value = "/varoozhan", method = RequestMethod.GET)
-	String seanHereString() {
+	String VaroozhanHereString() {
 		// You can replace this with other string,
 		// and run the application locally to check your changes
 		// with the URL: http://localhost:8080/
