@@ -3,6 +3,9 @@ package edu.csupomona.cs480.controller;
 import com.google.gson.Gson;
 import java.util.List;
 
+import org.scribe.model.Request;
+import org.scribe.model.Response;
+import org.scribe.model.Verb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.Game;
+import edu.csupomona.cs480.ScribeRequest;
 import edu.csupomona.cs480.data.GpsProduct;
 import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.GpsProductManager;
@@ -89,6 +93,18 @@ public class WebController {
 		Game redDead = gson.fromJson(json, Game.class);
                 return redDead;
 	}
+	
+	@RequestMapping(value = "/masesk/scribe", method = RequestMethod.GET)
+	String MasesK() {
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/
+                String URL = "https://opentdb.com/api.php?amount=10";
+                Request request = new Request(Verb.GET, URL);
+                Response resp = request.send();
+                return resp.getBody();
+	}
+	
         
         
         
