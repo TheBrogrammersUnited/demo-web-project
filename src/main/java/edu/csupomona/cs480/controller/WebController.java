@@ -1,6 +1,7 @@
 package edu.csupomona.cs480.controller;
 
-import com.google.gson.Gson;
+//import com.google.gson.Gson;
+import com.google.common.base.Joiner;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,13 +82,21 @@ public class WebController {
 	 */
 	@RequestMapping(value = "/johnz/GSON", method = RequestMethod.GET)
 	Game johnGson() {
+		// commented by Sean until we fix the pom
 		// You can replace this with other string,
 		// and run the application locally to check your changes
 		// with the URL: http://localhost:8080/
                 String json = "{\"Brand\":\"Rockstar Games\", \"Title\": \"Red Dead Redemption II\", \"Price\": \"$60\"}";
-                Gson gson = new Gson();
-		Game redDead = gson.fromJson(json, Game.class);
-                return redDead;
+                //Gson gson = new Gson();
+		//Game redDead = gson.fromJson(json, Game.class);
+             //   return redDead;
+                return new Game();
+	}
+	
+	@RequestMapping(value = "/sean/guava", method = RequestMethod.GET)
+	String seanGuava() {
+		Joiner joiner = Joiner.on("; ").skipNulls();
+		 return joiner.join("Harry", null, "Ron", "Hermione");
 	}
         
         
