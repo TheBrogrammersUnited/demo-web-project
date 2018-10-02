@@ -20,6 +20,11 @@ import okhttp3.OkHttpClient;
 import okhttp3.Response;
 import okhttp3.Request;
 
+import org.apache.commons.math3.distribution.*;
+import org.apache.commons.math3.stat.descriptive.*;
+import java.util.Random;
+import org.uncommons.maths.random.*;
+
 import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.Game;
 import edu.csupomona.cs480.ScribeRequest;
@@ -134,14 +139,45 @@ public class WebController {
 	}
 	
 	/**
-	 * Sarmen example
+	 * Sarmen example A4
 	 */
 	@RequestMapping(value = "/sarmena1990", method = RequestMethod.GET)
 	String samWasHere() {
-		// You can replace this with other string,
-		// and run the application locally to check your changes
-		// with the URL: http://localhost:8080/
-		return "Anderiasian was here";
+		Random rng=new MersenneTwisterRNG();
+		
+		
+		DescriptiveStatistics stats= new DescriptiveStatistics();
+		
+		
+		DescriptiveStatistics myMaxVal= new DescriptiveStatistics();
+		
+		
+		for(int j=0;j<5;j++) {
+			stats.clear();
+		
+		for(int i=0;i<2000;i++) {
+			myMaxVal.clear();
+			
+			NormalDistribution myND1=new NormalDistribution(55.0,15.0);
+			myMaxVal.addValue(myND1.inverseCumulativeProbability(rng.nextDouble()));
+			
+			NormalDistribution myND2=new NormalDistribution(580.0,30.0);
+			myMaxVal.addValue(myND2.inverseCumulativeProbability(rng.nextDouble()));
+			
+			NormalDistribution myND3=new NormalDistribution(190.0,65.0);
+			myMaxVal.addValue(myND3.inverseCumulativeProbability(rng.nextDouble()));
+			
+			stats.addValue(myMaxVal.getMax());
+			
+			
+			}
+		System.out.println("Num of elements: "+ stats.getN());
+		System.out.println("Mean of dist of max: "+ stats.getMean());
+		System.out.println("std dev of dist of max: "+stats.getStandardDeviation()+"\n" );
+	  }
+		
+	}
+
 	}
 
 	/**

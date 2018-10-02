@@ -71,7 +71,16 @@
   		<artifactId>okhttp</artifactId>
   		<version>3.11.0</version>
   	</dependency>
-              
+          <dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-math3</artifactId>
+    <version>3.6.1</version>
+</dependency>
+<dependency>
+    <groupId>org.uncommons.maths</groupId>
+    <artifactId>uncommons-maths</artifactId>
+    <version>1.2.2a</version>
+</dependency>    
 	</dependencies>
  	<reporting>
 	  <plugins>
