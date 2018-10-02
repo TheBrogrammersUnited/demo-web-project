@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.IOException;
+import okhttp3.OkHttpClient;
+import okhttp3.Response;
+import okhttp3.Request;
+
 import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.Game;
 import edu.csupomona.cs480.data.GpsProduct;
@@ -94,14 +99,13 @@ public class WebController {
         
         
 	/**
-	 * Varoozhan example
+	 * Varoozhan example OkHttp
 	 */
 	@RequestMapping(value = "/varoozhan", method = RequestMethod.GET)
 	String VaroozhanHereString() {
-		// You can replace this with other string,
-		// and run the application locally to check your changes
-		// with the URL: http://localhost:8080/
-		return "Varoozhan Hartoonian was here";
+		Request request = new Request.Builder().url(url).build();
+		Response response = client.newCall(request).execute();
+		return response.body().string();
 	}
 	
 	/**
