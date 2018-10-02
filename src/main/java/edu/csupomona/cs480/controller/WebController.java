@@ -20,10 +20,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Response;
 import okhttp3.Request;
 
-import org.apache.commons.math3.distribution.*;
-import org.apache.commons.math3.stat.descriptive.*;
-import java.util.Random;
-import org.uncommons.maths.random.*;
+
 
 import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.Game;
@@ -33,6 +30,10 @@ import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.GpsProductManager;
 import edu.csupomona.cs480.data.provider.UserManager;
 
+import org.apache.commons.math3.distribution.*;
+import org.apache.commons.math3.stat.descriptive.*;
+import java.util.Random;
+import org.uncommons.maths.random.*;
 
 /**
  * This is the controller used by Spring framework.
