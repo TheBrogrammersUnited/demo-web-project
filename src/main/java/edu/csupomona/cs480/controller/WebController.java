@@ -1,5 +1,6 @@
 package edu.csupomona.cs480.controller;
 
+import com.google.gson.Gson;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.csupomona.cs480.App;
+import edu.csupomona.cs480.Game;
 import edu.csupomona.cs480.data.GpsProduct;
 import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.GpsProductManager;
@@ -73,6 +75,22 @@ public class WebController {
 		// with the URL: http://localhost:8080/
 		return "Zug-zug.";
 	}
+        
+                /**
+	 * new john zubiri gson example
+	 */
+	@RequestMapping(value = "/johnz/GSON", method = RequestMethod.GET)
+	Game johnGson() {
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/
+                String json = "{\"Brand\":\"Rockstar Games\", \"Title\": \"Red Dead Redemption II\", \"Price\": \"$60\"}";
+                Gson gson = new Gson();
+		Game redDead = gson.fromJson(json, Game.class);
+                return redDead;
+	}
+        
+        
         
         
 	/**
